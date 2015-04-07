@@ -63,7 +63,7 @@ task copyUberJar(type: Copy, dependsOn: [copyL4jLib, uberJar]) {
   into buildDir.absolutePath + project.ext.windowsOutputDir + '/lib'
 }
 
-task distWindowsApp(type: Zip, dependsOn: [uberJar, copyUberJar, createExe]) {
+task distWindowsApp(type: Zip, dependsOn: [uberJar, copyUberJar/*, createExe*/]) {
   description = "Creates an archive from the Microsoft Windows version." 
   baseName = applicationName + '-windows'
   
